@@ -1,0 +1,16 @@
+#sidebar{
+    width:310px;
+    background-color:#222;
+    height:100%;
+    float:left;
+}
+
+html, body { 
+  padding:0; 
+  height:100%; 
+}
+
+#main{
+    padding-top: 50px;
+    height:100%;
+}

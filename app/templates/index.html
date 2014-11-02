@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Watson Consulting</title>
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Watson Licensing</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+    </nav>
+    
+    <div id="main">
+
+        <div id="sidebar">
+        </div>
+        <div class="container">
+            <div class="row>
+                <div class="col-md-12">
+                    <h2 id="heading">Choose the best license for your software.</h2>
+                </div>
+
+                <div id="multipleChoiceWrapper">
+                    <div class="col-md-12">
+                        <h3>Question About License Type?</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="option1" type="button" class="btn btn-primary btn-lg btn-block">A</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="option2" type="button" class="btn btn-warning btn-lg btn-block">B</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button id="option3" type="button" class="btn btn-success btn-lg btn-block">C</button>
+                    </div>
+                </div>
+
+                <div id="questionWrapper">
+                    <div class="col-md-12">
+                        <form class="form" role="form">
+                            <div class="form-group">
+                                <label for="watsonQuestion">What questions do you have about this license?</label>
+                                <input type="text" class="form-control" id="watsonQuestion" placeholder="Ask Watson">
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-success btn-default pull-right">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#questionWrapper").hide();
+            
+            $("button").click(function(){
+                if($("#sidebar").children().length <= 4){
+                    $("#sidebar").append($(this).clone());
+                }
+                
+                if($("#sidebar").children().length > 4){
+                    $("#questionWrapper").show();
+                    $("#multipleChoiceWrapper").hide();
+                    $("#heading").text("Watson has determined that the Foo License is best for you!");
+                }
+            });
+
+            
+        });
+    </script>
+  </body>
+</html>
