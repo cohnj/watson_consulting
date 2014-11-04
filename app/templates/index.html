@@ -31,6 +31,29 @@
     <div id="main">
 
         <div id="sidebar">
+			<ul class="list-group">
+				<li class="list-group-item">Artistic License 2.0</li>
+				<li class="list-group-item">Berkeley Database License</li>
+				<li class="list-group-item">Boost Software License</li>
+				<li class="list-group-item">BSD license (modified version)</li>
+				<li class="list-group-item">BDL / BSD Documentation License</li>
+				<li class="list-group-item">CeCILL (CEA CNRS INRIA Logiciel Libre)</li>
+				<li class="list-group-item">Cryptix General License</li>
+				<li class="list-group-item">Eclipse Distribution License</li>
+				<li class="list-group-item">EUPL  European Union Public License</li>
+				<li class="list-group-item">GPL / GNU General Public License</li>
+				<li class="list-group-item">Intel Open Source License</li>
+				<li class="list-group-item">ISC license </li>
+				<li class="list-group-item">LGPL / GNU Lesser General Public License</li>
+				<li class="list-group-item">License of Python</li>
+				<li id="MIT" class="list-group-item">MIT License</li>
+				<li class="list-group-item">Mozilla Public License (MPL) version 2.0</li>
+				<li class="list-group-item">Public Domain</li>
+				<li class="list-group-item">W3C Software Notice and License</li>
+				<li class="list-group-item">WTFPL</li>
+				<li class="list-group-item">X11 License</li>
+				<li class="list-group-item">Zope Public License</li>
+			</ul>
         </div>
         <div class="container">
             <div class="row>
@@ -40,16 +63,34 @@
 
                 <div id="multipleChoiceWrapper">
                     <div class="col-md-12">
-                        <h3>Question About License Type?</h3>
-                    </div>
-                    <div class="col-md-4">
-                        <button id="option1" type="button" class="btn btn-primary btn-lg btn-block">A</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button id="option2" type="button" class="btn btn-warning btn-lg btn-block">B</button>
-                    </div>
-                    <div class="col-md-4">
-                        <button id="option3" type="button" class="btn btn-success btn-lg btn-block">C</button>
+						<h3>Attributes of your license:</h3>
+					</div>
+					<div class="col-md-3 col-md-offset-1">
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox3" value="commercial"> Commercial
+						</label>
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox3" value="distribute"> Distribute
+						</label>
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox3" value="modify"> Modify
+						</label>
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox1" value="patent"> Patent Rights
+						</label>
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox1" value="private"> Private Use
+						</label>
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox2" value="sublicensing"> Sublicensing
+						</label>
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox2" value="liability"> Liability
+						</label>
+						<label class="checkbox">
+							<input type="checkbox" id="inlineCheckbox3" value="trademark"> Trademark Protection
+						</label>
+						<button type="button" id="filter" class="btn btn-success btn-default pull-right">Submit</button>
                     </div>
                 </div>
 
@@ -60,8 +101,36 @@
                                 <label for="watsonQuestion">What questions do you have about this license?</label>
                                 <input type="text" class="form-control" id="watsonQuestion" placeholder="Ask Watson">
                             </div>
-                            <button type="submit" class="btn btn-lg btn-success btn-default pull-right">Submit</button>
+							<button type="submit" class="btn btn-success btn-default pull-right">Submit</button>
                         </form>
+					</div>
+					
+					<div class="col-md-12" style="margin-top:20px">
+						<div class="panel panel-default">
+							<div class="panel-heading">MIT License</div>
+							<div class="panel-body">
+							The MIT License (MIT)
+
+Copyright (c)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. </div>
+						</div>
                     </div>
                 </div>
             </div>
@@ -74,17 +143,14 @@
     <script>
         $(document).ready(function(){
             $("#questionWrapper").hide();
+			var count = 0;
             
-            $("button").click(function(){
-                if($("#sidebar").children().length <= 4){
-                    $("#sidebar").append($(this).clone());
-                }
-                
-                if($("#sidebar").children().length > 4){
-                    $("#questionWrapper").show();
-                    $("#multipleChoiceWrapper").hide();
-                    $("#heading").text("Watson has determined that the Foo License is best for you!");
-                }
+            $("#filter").click(function(){
+				$("#questionWrapper").show();
+				$("#multipleChoiceWrapper").hide();
+				$("#heading").text("Watson has determined the licenses that are best for you!");
+				$(".list-group-item").hide();
+				$("#MIT").show();
             });
 
             
