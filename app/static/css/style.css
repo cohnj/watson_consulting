@@ -1,8 +1,5 @@
-#sidebar{
-    width:310px;
-    background-color:#222;
-    height:100%;
-    float:left;
+#QAWrapper{
+	margin-top: 20px;
 }
 
 html, body { 
