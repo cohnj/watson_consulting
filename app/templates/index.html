@@ -36,18 +36,34 @@
                 </div>
 			</div>
 			
-			<div class="row" id="questionWrapper">
+			<div class="row" id="decisionForm">
 				<div class="col-md-12">
 					<form class="form" role="form" action="question" method="post">
 						<div class="form-group">
-							<label for="watsonQuestion">What questions do you have about the ACA?</label>
-							<input type="text" class="form-control" id="watsonQuestion" name="watsonQuestion" placeholder="Ask Watson">
+							<h3 id="decisionTreeQuestion" for="decisionTreeQuestion">Federal or State level?</h3>
 						</div>
-						<button id="questionSubmit" type="submit" class="btn btn-success btn-default pull-right">Submit</button>
+						<div class="col-md-5">
+							<button type="button" id="fed" class="btn btn-default decisionTreeAnswer">Federal</button>
+						</div>
+						<div class="col-md-5">
+							<button type="button" id="ill" class="btn btn-default decisionTreeAnswer">State</button>
+						</div>
 					</form>
 				</div>
 			</div>
 			
+			<div class="row" id="questionWrapper">
+				<div class="col-md-12">
+					<form class="form" role="form">
+						<div class="form-group">
+							<label for="watsonQuestion">What questions do you have about the ACA?</label>
+							<input type="text" class="form-control" id="watsonQuestion" name="watsonQuestion" placeholder="Ask Watson">
+						</div>
+						<button id="questionSubmit" type="button" class="btn btn-success btn-default pull-right">Submit</button>
+					</form>
+				</div>
+			</div>
+			<!--
 			<div id="QAWrapper">
 				<div class="row">
 					<div class="col-md-12">
@@ -94,11 +110,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-
-            
-        });
-    </script>
+	<script src="/static/js/main.js"></script>
   </body>
 </html>

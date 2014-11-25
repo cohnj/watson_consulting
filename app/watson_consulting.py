@@ -17,6 +17,5 @@ def question():
     response = requests.post("https://watson-wdc01.ihost.com/instance/504/WatsonApp/deepqa/v1/question/1337",auth=(watsonUser,watsonPwd),data=jsonData)
     return response.text
     
-
 if __name__ == '__main__':
 	app.run(debug=True)
