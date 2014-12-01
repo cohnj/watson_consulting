@@ -59,6 +59,7 @@ $(".decisionTreeAnswer").click(function(){
 	console.log(metaTagString);
 });
 
+<<<<<<< HEAD
 // $("#questionSubmit").click(function(){
 // 	$.post($SCRIPT_ROOT + "/question", $("#watsonQuestion").val(), function(data){
 // 		alert(data);
@@ -69,5 +70,11 @@ $("#questionSubmit").click(function(){
         watsonQuestion : $("#watsonQuestion").val()}, 
         function(data){
 			alert(data.result);
+=======
+$("#questionSubmit").submit(function(e){
+	$.post("question", {watsonQuestion: $("#watsonQuestion").val()}, function(data){
+		$("#response").text(data);
+>>>>>>> 3369916c59670f672bb4a0260e3b59464daca007
 	});
+	return false;
 });
