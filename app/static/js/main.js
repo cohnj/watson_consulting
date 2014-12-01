@@ -12,6 +12,7 @@ function node(key, value, question){
 	this.right = null;
 }
 
+
 var root = new node('root','ACA', 'Federal or State run plan?');
 var federal = new node('fed','Federal', 'Are you a person or representing a business?');
 var state = new node('il','State', 'Are you looking for personal insurance or through a business?');
@@ -58,8 +59,15 @@ $(".decisionTreeAnswer").click(function(){
 	console.log(metaTagString);
 });
 
+// $("#questionSubmit").click(function(){
+// 	$.post($SCRIPT_ROOT + "/question", $("#watsonQuestion").val(), function(data){
+// 		alert(data);
+// 	});
+
 $("#questionSubmit").click(function(){
-	$.post("question", $("#watsonQuestion").val(), function(data){
-		
+	$.getJSON($SCRIPT_ROOT + "/question", {
+        watsonQuestion : $("#watsonQuestion").val()}, 
+        function(data){
+			alert(data.result);
 	});
 });
