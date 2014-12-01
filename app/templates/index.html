@@ -54,14 +54,16 @@
 			
 			<div class="row" id="questionWrapper">
 				<div class="col-md-12">
-					<form class="form" role="form">
+					<form class="form" role="form" id="questionSubmit">
 						<div class="form-group">
 							<label for="watsonQuestion">What questions do you have about the ACA?</label>
 							<input type="text" class="form-control" id="watsonQuestion" name="watsonQuestion" placeholder="Ask Watson">
 						</div>
-						<button id="questionSubmit" type="button" class="btn btn-success btn-default pull-right">Submit</button>
+						<button type="submit" class="btn btn-success btn-default pull-right">Submit</button>
 					</form>
 				</div>
+			</div>
+			<div id="response">
 			</div>
 			<!--
 			<div id="QAWrapper">

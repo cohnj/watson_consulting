@@ -58,8 +58,9 @@ $(".decisionTreeAnswer").click(function(){
 	console.log(metaTagString);
 });
 
-$("#questionSubmit").click(function(){
-	$.post("question", $("#watsonQuestion").val(), function(data){
-		
+$("#questionSubmit").submit(function(e){
+	$.post("question", {watsonQuestion: $("#watsonQuestion").val()}, function(data){
+		$("#response").text(data);
 	});
+	return false;
 });
