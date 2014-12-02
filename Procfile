@@ -1,1 +1,1 @@
-web: gunicorn watson_consulting:app
+web: gunicorn watsonconsulting:app
