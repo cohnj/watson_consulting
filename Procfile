@@ -1,0 +1,1 @@
+web: gunicorn watson_consulting:app
