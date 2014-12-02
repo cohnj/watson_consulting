@@ -5,3 +5,4 @@ SQLAlchemy==0.9.7
 Sphinx==1.2.3
 Werkzeug==0.9.6
 requests==2.4.3
+gunicorn==19.1.0
